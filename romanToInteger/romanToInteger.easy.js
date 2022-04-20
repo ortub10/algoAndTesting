@@ -85,10 +85,8 @@ const romanToInt = function (s) {
                 break;
 
             default:
-                numberAsInt+=romanNumeralsObj[letter];
-            
+                numberAsInt+=romanNumeralsObj[letter];     
         }
-
     }
     return numberAsInt; 
 };
