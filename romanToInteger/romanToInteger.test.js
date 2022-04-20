@@ -1,0 +1,8 @@
+const romanToInt =require("./romanToInteger.easy");
+test('Example 1',()=>{
+    expect(romanToInt('III')).toBe(3);
+});
+
+test('Example 2',()=>{
+    expect(romanToInt('MCMXCIV')).toBe(1994);
+});
