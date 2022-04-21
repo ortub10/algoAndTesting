@@ -41,6 +41,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
  */
 
 const romanToInt = function (s) {
+    if(typeof s !=="string") return 'must be a string';
     const romanNumeralsObj = {
         I:1,
         V:5,

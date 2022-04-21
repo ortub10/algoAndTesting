@@ -23,4 +23,23 @@ Example 3:
 Input: s = "(]"
 Output: false
  */
-const isValid = function (s) {};
+const isValid = function (s) {
+    if(typeof s !== "string") return "must be a string";
+    let brackets= [];
+    for(let i = 0; i<s.length; i+=1){
+        let current = s[i];
+         if(current === '(' || current === '[' || current === '{') {
+             brackets.push(current);
+         }
+        else if(current === ')' || current === ']' || current ==='}'){
+            if(brackets.length === 0) return false;
+            let old = brackets.pop();
+            if((current === ')' && old !== '(') || (current === ']' && old !== '[')
+            || (current === '}' && old !== '{')) return false;
+        }
+    }
+    if(brackets.length!==0) return false;
+    return true;
+};
+
+module.exports = isValid;

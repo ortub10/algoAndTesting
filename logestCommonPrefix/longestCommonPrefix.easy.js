@@ -18,7 +18,10 @@
  */
 
 const longestCommonPrefix = function (strs) {
+    if(!(Array.isArray(strs))) return 'not array;'
     return strs.reduce((acc,str) =>{
+        acc = acc.toString();
+        str = str.toString();
         if(acc.length>str.length){
             let temp = acc;
             acc = str;
@@ -37,5 +40,4 @@ const longestCommonPrefix = function (strs) {
     })
 };
 module.exports = longestCommonPrefix;
-
 

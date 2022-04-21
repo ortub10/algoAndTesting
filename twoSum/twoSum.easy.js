@@ -26,4 +26,20 @@ Input: nums = [3,3], target = 6
 Output: [0,1]}
  */
 
-const twoSum = function (nums, target) {};
+const twoSum = function (nums, target) {
+    if(!(Array.isArray(nums))|| typeof target !=="number"){
+        return 'nums must be array and terget number';
+    } 
+    const obj = {};
+    for(let i =0; i<nums.length; i+=1){
+        if(typeof nums[i] !== "number") return 'not array of numbres'; 
+        if(obj[nums[i].toString()] === undefined){   
+            const temp = target - nums[i];
+            obj[temp.toString()] = i;
+        }
+        else{
+             return [obj[nums[i].toString()],i];
+        } 
+    }
+};
+module.exports = twoSum;

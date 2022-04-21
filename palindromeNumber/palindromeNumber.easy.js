@@ -27,6 +27,7 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.}
  */
 
 const palindromeNumber = function (x) {
+  if(typeof x !== "number") return 'must be munber';
     x=x.toString();
     const stop = Math.floor(x.length/2);
     for(let i = 0; i<stop; i+=1){

@@ -31,9 +31,13 @@ nums contains distinct values sorted in ascending order.
 -104 <= target <= 104
  */
 const searchInsert = function (nums, target) {
+    if(!(Array.isArray(nums))|| typeof target !=="number"){
+        return 'nums must be array and terget number';
+    } 
     const iter = Math.floor(Math.log2(nums.length));
     let x = Math.floor(nums.length/2)-1;
     for(let i = 0; i<iter; i+=1){
+        if(typeof nums[x] !== "number") return 'not array of numbres' 
         if(target>=nums[x] && target<=nums[x+1]){
         return x+1;
         }

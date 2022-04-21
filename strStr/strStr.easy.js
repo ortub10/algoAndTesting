@@ -32,6 +32,13 @@ haystack and needle consist of only lowercase English characters.
  */
 
 const strStr = function (haystack, needle) {
+    if(needle.length === 0) return 0;
+    if(typeof haystack !== "string" || typeof needle !== "string"){
+        return 'haystack and needle must be strings';
+    }
+    if(!(/^[a-z]+$/.test(haystack))||!(/^[a-z]+$/.test(needle)) ){
+        return 'must be only lowercase English characters';
+    } 
     let index = -1;
     let strTemp = "";
     for(let i=0, j=0; i<haystack.length && j<needle.length; i+=1){
